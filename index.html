@@ -11,19 +11,11 @@
 
 <style>
 
-/* =========================
-RESET
-========================= */
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
-/* =========================
-BODY
-========================= */
 
 body{
 background:#06070d;
@@ -32,10 +24,6 @@ font-family:'Oxanium',sans-serif;
 overflow-x:hidden;
 min-height:100vh;
 }
-
-/* =========================
-BACKGROUND GRID
-========================= */
 
 body::before{
 content:'';
@@ -67,9 +55,7 @@ transparent 65%
 z-index:-1;
 }
 
-/* =========================
-NAVBAR
-========================= */
+/* NAVBAR */
 
 .top-navbar{
 width:100%;
@@ -86,10 +72,6 @@ z-index:99999;
 box-shadow:
 0 4px 30px rgba(0,242,254,0.25);
 }
-
-/* =========================
-LOGO
-========================= */
 
 .logo{
 position:relative;
@@ -183,9 +165,7 @@ transform:translateY(0px);
 }
 }
 
-/* =========================
-NAV BUTTONS
-========================= */
+/* NAV BUTTONS */
 
 .nav-buttons{
 display:flex;
@@ -220,21 +200,17 @@ box-shadow:
 transform:translateY(-2px);
 }
 
-/* =========================
-HERO
-========================= */
+/* HERO */
 
 .hero{
 padding:150px 20px 0px;
 text-align:center;
 }
 
-/* =========================
-POSTER GRID
-========================= */
+/* POSTER GRID */
 
 .poster-grid{
-max-width:900px;
+max-width:1200px;
 margin:auto;
 padding:20px 18px 100px;
 display:grid;
@@ -244,9 +220,7 @@ gap:32px;
 justify-content:center;
 }
 
-/* =========================
-POSTER CARD
-========================= */
+/* POSTER CARD */
 
 .poster-card{
 background:#0e1122;
@@ -280,33 +254,34 @@ box-shadow:
 0 15px 30px rgba(0,242,254,0.25);
 }
 
-/* =========================
-IMAGE
-========================= */
+/* IMAGE */
 
 .image-container{
 width:100%;
-aspect-ratio:1 / 1.32;
+height:450px;
 overflow:hidden;
 border:1px solid rgba(255,255,255,0.05);
 background:#06070d;
+border-radius:12px;
+position:relative;
 }
+
+/* PERFECT POSTER FIT */
 
 .poster-image{
 width:100%;
 height:100%;
-object-fit:contain;
+object-fit:cover;
+object-position:center;
 display:block;
 transition:0.4s;
 }
 
 .poster-card:hover .poster-image{
-transform:scale(1.02);
+transform:scale(1.03);
 }
 
-/* =========================
-REGISTER BUTTON
-========================= */
+/* REGISTER BUTTON */
 
 .poster-btn{
 font-family:'Oxanium',sans-serif;
@@ -351,9 +326,7 @@ box-shadow:
 0 0 25px rgba(255,255,255,0.5);
 }
 
-/* =========================
-POPUP
-========================= */
+/* POPUP */
 
 .popup-bg{
 position:fixed;
@@ -419,9 +392,401 @@ background:#00f2fe;
 color:#06070d;
 }
 
-/* =========================
-ERROR POPUP
-========================= */
+/* ERROR POPUPA<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EDUCATION FOR DIGITAL ASSETS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Oxanium:wght@600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#06070d;
+color:#e2eafc;
+font-family:'Oxanium',sans-serif;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,242,254,0.015) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,242,254,0.015) 1px, transparent 1px);
+background-size:30px 30px;
+z-index:-2;
+}
+
+body::after{
+content:'';
+position:fixed;
+top:20%;
+right:-10%;
+width:600px;
+height:600px;
+background:
+radial-gradient(
+circle,
+rgba(0,242,254,0.06) 0%,
+transparent 65%
+);
+z-index:-1;
+}
+
+/* NAVBAR */
+
+.top-navbar{
+width:100%;
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#090b14;
+border-bottom:3px solid #00f2fe;
+position:fixed;
+top:0;
+left:0;
+z-index:99999;
+box-shadow:
+0 4px 30px rgba(0,242,254,0.25);
+}
+
+.logo{
+position:relative;
+padding:14px 35px;
+font-size:32px;
+font-weight:900;
+letter-spacing:5px;
+text-transform:uppercase;
+border-radius:18px;
+overflow:hidden;
+background:
+linear-gradient(
+135deg,
+rgba(0,242,254,0.12),
+rgba(255,255,255,0.03)
+);
+border:1px solid rgba(0,242,254,0.5);
+box-shadow:
+0 0 15px rgba(0,242,254,0.5),
+0 0 50px rgba(0,242,254,0.15);
+backdrop-filter:blur(12px);
+animation:floatLogo 3s ease-in-out infinite;
+white-space: nowrap;
+}
+
+.logo span{
+background:
+linear-gradient(
+90deg,
+#00f2fe,
+#ffffff,
+#5ce1ff,
+#00f2fe
+);
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:textMove 5s linear infinite;
+}
+
+.logo::before{
+content:'';
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:
+conic-gradient(
+from 0deg,
+transparent,
+rgba(0,242,254,0.4),
+transparent 30%
+);
+animation:rotateGlow 6s linear infinite;
+}
+
+.logo::after{
+content:'';
+position:absolute;
+inset:2px;
+background:#090b14;
+border-radius:16px;
+z-index:-1;
+}
+
+@keyframes rotateGlow{
+100%{
+transform:rotate(360deg);
+}
+}
+
+@keyframes textMove{
+0%{
+background-position:0%;
+}
+100%{
+background-position:300%;
+}
+}
+
+@keyframes floatLogo{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-3px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+/* NAV BUTTONS */
+
+.nav-buttons{
+display:flex;
+gap:12px;
+}
+
+.nav-buttons button{
+font-family:'Oxanium',sans-serif;
+padding:12px 28px;
+border:1px solid #00f2fe;
+background:transparent;
+color:#00f2fe;
+font-size:15px;
+font-weight:700;
+letter-spacing:1px;
+cursor:pointer;
+clip-path:
+polygon(
+10px 0%,
+100% 0%,
+calc(100% - 10px) 100%,
+0% 100%
+);
+transition:0.3s;
+}
+
+.nav-buttons button:hover{
+background:#00f2fe;
+color:#06070d;
+box-shadow:
+0 0 20px rgba(0,242,254,0.5);
+transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+padding:150px 20px 0px;
+text-align:center;
+}
+
+/* POSTER GRID */
+
+.poster-grid{
+max-width:1200px;
+margin:auto;
+padding:20px 18px 100px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+gap:32px;
+justify-content:center;
+}
+
+/* POSTER CARD */
+
+.poster-card{
+background:#0e1122;
+border:2px solid #1a1f38;
+padding:18px;
+position:relative;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+clip-path:
+polygon(
+0 0,
+calc(100% - 20px) 0,
+100% 20px,
+100% 100%,
+20px 100%,
+0 calc(100% - 20px)
+);
+transition:0.4s;
+max-width:340px;
+margin:auto;
+}
+
+.poster-card:hover{
+transform:
+translateY(-4px)
+scale(1.01);
+border-color:#00f2fe;
+box-shadow:
+-4px 4px 0px #00f2fe,
+0 15px 30px rgba(0,242,254,0.25);
+}
+
+/* IMAGE */
+
+.image-container{
+width:100%;
+height:450px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.05);
+background:#06070d;
+border-radius:12px;
+position:relative;
+}
+
+/* PERFECT POSTER FIT */
+
+.poster-image{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
+display:block;
+transition:0.4s;
+}
+
+.poster-card:hover .poster-image{
+transform:scale(1.03);
+}
+
+/* REGISTER BUTTON */
+
+.poster-btn{
+font-family:'Oxanium',sans-serif;
+width:100%;
+padding:14px;
+margin-top:16px;
+border:none;
+background:
+linear-gradient(
+135deg,
+#00f2fe 0%,
+#00a2ae 100%
+);
+color:#06070d;
+font-size:14px;
+font-weight:800;
+letter-spacing:2px;
+cursor:pointer;
+clip-path:
+polygon(
+0 0,
+100% 0,
+calc(100% - 10px) 100%,
+10px 100%
+);
+transition:0.3s;
+box-shadow:
+0 0 15px rgba(0,242,254,0.35);
+}
+
+.poster-btn:hover{
+background:
+linear-gradient(
+135deg,
+#ffffff 0%,
+#e2eafc 100%
+);
+transform:
+translateY(-3px)
+scale(1.02);
+box-shadow:
+0 0 25px rgba(255,255,255,0.5);
+}
+
+/* POPUP */
+
+.popup-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+justify-content:center;
+align-items:center;
+background:
+rgba(4,5,10,0.92);
+z-index:9999;
+padding:20px;
+}
+
+.popup-box{
+width:400px;
+padding:40px 30px;
+background:#0a0d1a;
+border:2px solid #00f2fe;
+text-align:center;
+box-shadow:
+0 0 30px rgba(0,242,254,0.2);
+}
+
+.popup-box h2{
+font-size:22px;
+font-weight:800;
+margin-bottom:25px;
+color:#ffffff;
+letter-spacing:2px;
+}
+
+.popup-box input,
+.popup-box select{
+font-family:'Fira Code',monospace;
+width:100%;
+padding:14px;
+margin-bottom:16px;
+background:#12162b;
+border:1px solid #242b54;
+color:#00f2fe;
+font-size:14px;
+outline:none;
+}
+
+.popup-box button{
+font-family:'Oxanium',sans-serif;
+width:100%;
+padding:14px;
+border:1px solid #00f2fe;
+background:transparent;
+color:#00f2fe;
+font-size:14px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.popup-box button:hover{
+background:#00f2fe;
+color:#06070d;
+}
+
+/* ERROR POPUP */
 
 .error-popup{
 font-family:'Fira Code',monospace;
@@ -438,9 +803,7 @@ display:none;
 z-index:99999;
 }
 
-/* =========================
-MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -485,14 +848,16 @@ width:92%;
 padding:35px 20px;
 }
 
+.image-container{
+height:400px;
+}
+
 }
 
 </style>
 </head>
 
 <body>
-
-<!-- NAVBAR -->
 
 <nav class="top-navbar">
 
@@ -518,37 +883,9 @@ LOGIN DATA
 
 </nav>
 
-<!-- HERO -->
-
 <section class="hero"></section>
 
-<!-- POSTERS -->
-
 <section class="poster-grid">
-
-<!-- FIRST POSTER -->
-
-<div class="poster-card">
-
-<div class="image-container">
-
-<img
-src="https://i.postimg.cc/T1fC43Gc/unnamed-(2).png"
-class="poster-image">
-
-</div>
-
-<button
-class="poster-btn"
-onclick="checkFormStatus()">
-
-REGISTER
-
-</button>
-
-</div>
-
-<!-- SECOND POSTER -->
 
 <div class="poster-card">
 
@@ -570,97 +907,27 @@ REGISTER
 
 </div>
 
+<div class="poster-card">
+
+<div class="image-container">
+
+<img
+src="https://i.postimg.cc/HsYsQzVK/Chat-GPT-Image-May-24-2026-06-40-07-AM.png"
+class="poster-image">
+
+</div>
+
+<button
+class="poster-btn"
+onclick="openThirdGoogleForm()">
+
+REGISTER
+
+</button>
+
+</div>
+
 </section>
-
-<!-- OPEN TIME POPUP -->
-
-<div id="registerPopup" class="popup-bg">
-
-<div class="popup-box">
-
-<h2>
-REGISTRATION NOT OPEN
-</h2>
-
-<p style="
-font-size:15px;
-font-family:'Fira Code', monospace;
-line-height:1.7;
-color:#8a94b8;
-margin-bottom:25px;
-">
-
-FORM WILL OPEN ON
-
-<br><br>
-
-<span style="
-font-family:'Oxanium',sans-serif;
-font-size:24px;
-font-weight:800;
-color:#00f2fe;
-text-shadow:0 0 8px #00f2fe;
-">
-
-23.05.2026 • 08:00 PM
-
-</span>
-
-</p>
-
-<button onclick="closeRegisterPopup()">
-OK
-</button>
-
-</div>
-
-</div>
-
-<!-- CLOSED POPUP -->
-
-<div id="closedPopup" class="popup-bg">
-
-<div class="popup-box">
-
-<h2>
-REGISTRATION CLOSED
-</h2>
-
-<p style="
-font-size:15px;
-font-family:'Fira Code', monospace;
-line-height:1.7;
-color:#8a94b8;
-margin-bottom:25px;
-">
-
-REGISTRATION CLOSED ON
-
-<br><br>
-
-<span style="
-font-family:'Oxanium',sans-serif;
-font-size:24px;
-font-weight:800;
-color:#ff003c;
-text-shadow:0 0 8px #ff003c;
-">
-
-24.05.2026 • 11:00 AM
-
-</span>
-
-</p>
-
-<button onclick="closeClosedPopup()">
-CLOSE
-</button>
-
-</div>
-
-</div>
-
-<!-- ADMIN POPUP -->
 
 <div id="adminPopup" class="popup-bg">
 
@@ -682,8 +949,6 @@ VERIFY GATEKEY
 </div>
 
 </div>
-
-<!-- LOGIN POPUP -->
 
 <div id="loginPopup" class="popup-bg">
 
@@ -727,8 +992,6 @@ AUTHORIZE IDENTITY
 
 </div>
 
-<!-- ERROR POPUP -->
-
 <div id="errorPopup" class="error-popup">
 [ SYSTEM WARNING: INVALID DECK SIGNATURE COMBINATION ]
 </div>
@@ -746,50 +1009,6 @@ behavior:'smooth'
 
 }
 
-/* FIRST REGISTER BUTTON */
-
-function checkFormStatus(){
-
-const openDate =
-new Date(
-"May 23, 2026 20:00:00"
-).getTime();
-
-const closeDate =
-new Date(
-"May 24, 2026 11:00:00"
-).getTime();
-
-const now =
-new Date().getTime();
-
-if(now < openDate){
-
-document.getElementById(
-"registerPopup"
-).style.display = "flex";
-
-}
-
-else if(now > closeDate){
-
-document.getElementById(
-"closedPopup"
-).style.display = "flex";
-
-}
-
-else{
-
-window.open(
-"https://forms.gle/LfumD8h3SDh3R8vi7",
-"_blank"
-);
-
-}
-
-}
-
 /* SECOND REGISTER BUTTON */
 
 function openGoogleForm(){
@@ -801,21 +1020,14 @@ window.open(
 
 }
 
-/* CLOSE POPUPS */
+/* THIRD REGISTER BUTTON */
 
-function closeRegisterPopup(){
+function openThirdGoogleForm(){
 
-document.getElementById(
-"registerPopup"
-).style.display = "none";
-
-}
-
-function closeClosedPopup(){
-
-document.getElementById(
-"closedPopup"
-).style.display = "none";
+window.open(
+"https://forms.gle/ihDgYDRfcDCZ4WVN7",
+"_blank"
+);
 
 }
 
@@ -845,9 +1057,7 @@ window.onclick = function(event){
 
 let ids = [
 "adminPopup",
-"loginPopup",
-"registerPopup",
-"closedPopup"
+"loginPopup"
 ];
 
 ids.forEach(id => {
