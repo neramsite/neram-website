@@ -3,7 +3,8 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>EDUCATION FOR DIGITAL ASSETS</title>
 
@@ -210,7 +211,7 @@ text-align:center;
 /* POSTER GRID */
 
 .poster-grid{
-max-width:1200px;
+max-width:1400px;
 margin:auto;
 padding:20px 18px 100px;
 display:grid;
@@ -266,8 +267,6 @@ border-radius:12px;
 position:relative;
 }
 
-/* PERFECT POSTER FIT */
-
 .poster-image{
 width:100%;
 height:100%;
@@ -281,7 +280,7 @@ transition:0.4s;
 transform:scale(1.03);
 }
 
-/* REGISTER BUTTON */
+/* BUTTON */
 
 .poster-btn{
 font-family:'Oxanium',sans-serif;
@@ -326,9 +325,10 @@ box-shadow:
 0 0 25px rgba(255,255,255,0.5);
 }
 
-/* POPUP */
+/* POPUPS */
 
-.popup-bg{
+.popup-bg,
+.registration-popup{
 position:fixed;
 top:0;
 left:0;
@@ -343,7 +343,8 @@ z-index:9999;
 padding:20px;
 }
 
-.popup-box{
+.popup-box,
+.registration-box{
 width:400px;
 padding:40px 30px;
 background:#0a0d1a;
@@ -353,7 +354,8 @@ box-shadow:
 0 0 30px rgba(0,242,254,0.2);
 }
 
-.popup-box h2{
+.popup-box h2,
+.registration-box h2{
 font-size:22px;
 font-weight:800;
 margin-bottom:25px;
@@ -374,7 +376,8 @@ font-size:14px;
 outline:none;
 }
 
-.popup-box button{
+.popup-box button,
+.registration-box button{
 font-family:'Oxanium',sans-serif;
 width:100%;
 padding:14px;
@@ -387,26 +390,10 @@ cursor:pointer;
 transition:0.3s;
 }
 
-.popup-box button:hover{
+.popup-box button:hover,
+.registration-box button:hover{
 background:#00f2fe;
 color:#06070d;
-}
-
-/* ERROR POPUP */
-
-.error-popup{
-font-family:'Fira Code',monospace;
-position:fixed;
-top:25px;
-left:50%;
-transform:translateX(-50%);
-padding:14px 35px;
-background:#00f2fe;
-color:#06070d;
-font-size:13px;
-font-weight:700;
-display:none;
-z-index:99999;
 }
 
 /* ADMIN PAGE */
@@ -569,13 +556,15 @@ LOGIN DATA
 
 </nav>
 
-<!-- FIRST PAGE -->
+<!-- MAIN PAGE -->
 
 <div id="mainPage">
 
 <section class="hero"></section>
 
 <section class="poster-grid">
+
+<!-- FIRST BUTTON -->
 
 <div class="poster-card">
 
@@ -597,6 +586,8 @@ REGISTER
 
 </div>
 
+<!-- SECOND BUTTON -->
+
 <div class="poster-card">
 
 <div class="image-container">
@@ -610,6 +601,28 @@ class="poster-image">
 <button
 class="poster-btn"
 onclick="openThirdGoogleForm()">
+
+REGISTER
+
+</button>
+
+</div>
+
+<!-- THIRD BUTTON -->
+
+<div class="poster-card">
+
+<div class="image-container">
+
+<img
+src="https://i.postimg.cc/q7sHn3sr/Chat-GPT-Image-May-27-2026-08-30-51-AM.png"
+class="poster-image">
+
+</div>
+
+<button
+class="poster-btn"
+onclick="openNewRegistration()">
 
 REGISTER
 
@@ -740,10 +753,27 @@ AUTHORIZE IDENTITY
 
 </div>
 
-<!-- ERROR POPUP -->
+<!-- REGISTRATION POPUP -->
 
-<div id="errorPopup" class="error-popup">
-[ SYSTEM WARNING: INVALID DECK SIGNATURE COMBINATION ]
+<div id="registrationPopup"
+class="registration-popup">
+
+<div class="registration-box">
+
+<h2>
+REGISTRATION STATUS
+</h2>
+
+<p id="popupMessage">
+MESSAGE
+</p>
+
+<button onclick="closeRegistrationPopup()">
+CLOSE
+</button>
+
+</div>
+
 </div>
 
 <script>
@@ -767,7 +797,7 @@ behavior:'smooth'
 
 }
 
-/* REGISTER BUTTON */
+/* FIRST BUTTON ALWAYS OPEN */
 
 function openGoogleForm(){
 
@@ -778,7 +808,7 @@ window.open(
 
 }
 
-/* THIRD REGISTER BUTTON */
+/* SECOND BUTTON ALWAYS OPEN */
 
 function openThirdGoogleForm(){
 
@@ -786,6 +816,69 @@ window.open(
 "https://forms.gle/ihDgYDRfcDCZ4WVN7",
 "_blank"
 );
+
+}
+
+/* THIRD BUTTON DATE CONTROL */
+
+function openNewRegistration(){
+
+let now = new Date();
+
+let openDate =
+new Date("2026-05-29T20:00:00");
+
+let closeDate =
+new Date("2026-05-30T23:00:00");
+
+if(now < openDate){
+
+showRegistrationPopup(
+"REGISTRATION OPENS ON <br><br><b>29.05.2026 AT 08.00 PM</b>"
+);
+
+}
+
+else if(now > closeDate){
+
+showRegistrationPopup(
+"REGISTRATION CLOSED ON <br><br><b>30.05.2026 AT 11.00 PM</b>"
+);
+
+}
+
+else{
+
+window.open(
+"https://forms.gle/A4B68M2GiUD8QmjS7",
+"_blank"
+);
+
+}
+
+}
+
+/* SHOW POPUP */
+
+function showRegistrationPopup(message){
+
+document.getElementById(
+"registrationPopup"
+).style.display = "flex";
+
+document.getElementById(
+"popupMessage"
+).innerHTML = message;
+
+}
+
+/* CLOSE POPUP */
+
+function closeRegistrationPopup(){
+
+document.getElementById(
+"registrationPopup"
+).style.display = "none";
 
 }
 
@@ -809,13 +902,14 @@ document.getElementById(
 
 }
 
-/* CLICK OUTSIDE CLOSE */
+/* CLOSE POPUP OUTSIDE */
 
 window.onclick = function(event){
 
 let ids = [
 "adminPopup",
-"loginPopup"
+"loginPopup",
+"registrationPopup"
 ];
 
 ids.forEach(id => {
@@ -831,25 +925,6 @@ document.getElementById(id)
 }
 
 });
-
-}
-
-/* ERROR POPUP */
-
-function showError(){
-
-let popup =
-document.getElementById(
-"errorPopup"
-);
-
-popup.style.display = "block";
-
-setTimeout(() => {
-
-popup.style.display = "none";
-
-},4000);
 
 }
 
@@ -885,7 +960,7 @@ behavior:'smooth'
 
 else{
 
-showError();
+alert("INVALID PASSWORD");
 
 }
 
@@ -896,7 +971,7 @@ showError();
 function openTeamDetails(){
 
 window.open(
-"https://drive.google.com/drive/folders/1iMYgmjidh83pKap2_EiQM-Wk0FwvbCAi?usp=sharing",
+"https://drive.google.com/",
 "_blank"
 );
 
@@ -907,7 +982,7 @@ window.open(
 function openActivities(){
 
 window.open(
-"https://docs.google.com/spreadsheets/d/1aXF_EcN5TwxWob7VcEwsSTNWHbj0CeYS/edit?usp=sharing&ouid=103129801505293744516&rtpof=true&sd=true",
+"https://docs.google.com/",
 "_blank"
 );
 
@@ -949,7 +1024,7 @@ window.location.href =
 
 else{
 
-showError();
+alert("INVALID LOGIN");
 
 }
 
