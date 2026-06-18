@@ -61,11 +61,9 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 <div id="mainPage">
   <section class="hero"></section>
   <section class="poster-grid">
-    <!-- Buttons -->
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/LX8jbmBf/Chat-GPT-Image-Jun-1-2026-03-19-56-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openGoogleForm()">REGISTER</button></div>
-    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/Dypm8tM5/Chat-GPT-Image-Jun-9-2026-10-00-02-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openThirdGoogleForm()">REGISTER</button></div>
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/NG6LgtmF/Chat-GPT-Image-Jun-18-2026-02-56-25-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openNewRegistration()">REGISTER</button></div>
-    
+
   </section>
 </div>
 
@@ -84,16 +82,12 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 <script>
 function goHome(){ document.getElementById("mainPage").style.display = "block"; document.getElementById("adminPage").style.display = "none"; window.scrollTo({top:0, behavior:'smooth'}); }
 function openGoogleForm(){ window.open("https://forms.gle/jPvpNZEK93SHuRU98", "_blank"); }
-function openThirdGoogleForm(){ window.open("https://forms.gle/VFJD5VwVRqr882TE8", "_blank"); }
 function openNewRegistration(){
   let now = new Date();
-  let openDate = new Date("2026-06-13T20:00:00");
-  let closeDate = new Date("2026-06-14T23:00:00");
-  if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>13.06.2026 AT 08.00 PM</b>"); }
-  else if(now > closeDate){ showRegistrationPopup("REGISTRATION CLOSED ON <br><br><b>14.06.2026 AT 11.00 AM</b>"); }
+  let openDate = new Date("2026-06-20T20:00:00");
+  if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>20.06.2026 AT 08.00 PM</b>"); }
   else{ window.open("https://forms.gle/Lqo6L2pqWXbcLnPA8", "_blank"); }
 }
-function openFourthRegistration(){ window.open("https://forms.gle/E41VRf96WjvRzKuc8", "_blank"); }
 function showRegistrationPopup(message){ document.getElementById("registrationPopup").style.display = "flex"; document.getElementById("popupMessage").innerHTML = message; }
 function closeRegistrationPopup(){ document.getElementById("registrationPopup").style.display = "none"; }
 function openAdminPopup(){ document.getElementById("adminPopup").style.display = "flex"; }
