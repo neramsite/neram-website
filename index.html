@@ -64,7 +64,7 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
     <!-- Buttons -->
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/LX8jbmBf/Chat-GPT-Image-Jun-1-2026-03-19-56-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openGoogleForm()">REGISTER</button></div>
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/Dypm8tM5/Chat-GPT-Image-Jun-9-2026-10-00-02-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openThirdGoogleForm()">REGISTER</button></div>
-    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/XYdfZ6Rq/Chat-GPT-Image-Jun-9-2026-07-35-00-AM.png" class="poster-image"></div><button class="poster-btn" onclick="openNewRegistration()">REGISTER</button></div>
+    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/NG6LgtmF/Chat-GPT-Image-Jun-18-2026-02-56-25-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openNewRegistration()">REGISTER</button></div>
     
   </section>
 </div>
@@ -91,7 +91,7 @@ function openNewRegistration(){
   let closeDate = new Date("2026-06-14T23:00:00");
   if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>13.06.2026 AT 08.00 PM</b>"); }
   else if(now > closeDate){ showRegistrationPopup("REGISTRATION CLOSED ON <br><br><b>14.06.2026 AT 11.00 AM</b>"); }
-  else{ window.open("https://forms.gle/vbRr9DUCeeUkB2WT8", "_blank"); }
+  else{ window.open("https://forms.gle/Lqo6L2pqWXbcLnPA8", "_blank"); }
 }
 function openFourthRegistration(){ window.open("https://forms.gle/E41VRf96WjvRzKuc8", "_blank"); }
 function showRegistrationPopup(message){ document.getElementById("registrationPopup").style.display = "flex"; document.getElementById("popupMessage").innerHTML = message; }
