@@ -64,6 +64,7 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/LX8jbmBf/Chat-GPT-Image-Jun-1-2026-03-19-56-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openGoogleForm()">REGISTER</button></div>
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/90NFH3Yf/Chat-GPT-Image-Jun-20-2026-02-14-53-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openNewRegistration()">REGISTER</button></div>
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/pX06fWqs/Chat-GPT-Image-Jun-20-2026-01-47-32-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openThirdRegistration()">REGISTER</button></div>
+    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/pX06fWqs/Chat-GPT-Image-Jun-20-2026-01-47-32-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openFourthRegistration()">REGISTER</button></div>
   </section>
 </div>
 
@@ -88,10 +89,10 @@ function openNewRegistration(){
   if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>20.06.2026 AT 08.00 PM</b>"); }
   else{ window.open("https://forms.gle/Lqo6L2pqWXbcLnPA8", "_blank"); }
 }
-// 3rd Registration function
-function openThirdRegistration(){
-    window.open("https://forms.gle/2HzfFrZH1WzpNSxGA", "_blank");
-}
+function openThirdRegistration(){ window.open("https://forms.gle/2HzfFrZH1WzpNSxGA", "_blank"); }
+// 4th Registration function
+function openFourthRegistration(){ window.open("https://docs.google.com/forms/d/e/1FAIpQLScJb4HkCxrjIawae9_uOTFYdpJRWBHXxCcCP9ubJOrvMBnK-w/viewform?usp=sharing&ouid=103129801505293744516", "_blank"); }
+
 function showRegistrationPopup(message){ document.getElementById("registrationPopup").style.display = "flex"; document.getElementById("popupMessage").innerHTML = message; }
 function closeRegistrationPopup(){ document.getElementById("registrationPopup").style.display = "none"; }
 function openAdminPopup(){ document.getElementById("adminPopup").style.display = "flex"; }
@@ -103,17 +104,3 @@ window.onclick = function(event){
 function checkAdminPassword(){
   let pass = document.getElementById("adminPassword").value;
   if(pass === "kavi123"){ document.getElementById("adminPopup").style.display = "none"; document.getElementById("mainPage").style.display = "none"; document.getElementById("adminPage").style.display = "block"; window.scrollTo({top:0, behavior:'smooth'}); }
-  else{ alert("INVALID PASSWORD"); }
-}
-function openTeamDetails(){ window.open("https://drive.google.com/", "_blank"); }
-function openActivities(){ window.open("https://docs.google.com/", "_blank"); }
-function checkLoginData(){
-  let level = document.getElementById("loginLevel").value;
-  let password = document.getElementById("loginPassword").value;
-  if(level === "L4" && password === "hexa$777"){ window.location.href = "https://drive.google.com/drive/folders/1HYouDTJ_r708j-cpvbCRy6ZN5Xcxh-a3?usp=sharing"; }
-  else if(level === "L5" && password === "krotos$7"){ window.location.href = "https://drive.google.com/drive/folders/1iHYvK3v3zVsMlEngk-alxY7P88dKniRG?usp=sharing"; }
-  else{ alert("INVALID LOGIN"); }
-}
-</script>
-</body>
-</html>
