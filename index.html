@@ -62,10 +62,8 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
   <section class="hero"></section>
   <section class="poster-grid">
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/LX8jbmBf/Chat-GPT-Image-Jun-1-2026-03-19-56-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openGoogleForm()">REGISTER</button></div>
-    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/90NFH3Yf/Chat-GPT-Image-Jun-20-2026-02-14-53-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openNewRegistration()">REGISTER</button></div>
-    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/pX06fWqs/Chat-GPT-Image-Jun-20-2026-01-47-32-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openThirdRegistration()">REGISTER</button></div>
-    <!-- Fourth Registration Card Added Below -->
-    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/nhzXSt21/Chat-GPT-Image-Jun-19-2026-03-39-09-PM.png" class="poster-image" id="fourthPosterImg"></div><button class="poster-btn" onclick="openFourthRegistration()">REGISTER</button></div>
+    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/Bv90507X/Chat-GPT-Image-Jun-25-2026-10-37-31-AM.png" class="poster-image"></div><button class="poster-btn" onclick="openNewRegistration()">REGISTER</button></div>
+    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/MTsZmLjD/Chat-GPT-Image-Jun-25-2026-11-03-44-AM.png" class="poster-image" id="fourthPosterImg"></div><button class="poster-btn" onclick="openFourthRegistration()">REGISTER</button></div>
   </section>
 </div>
 
@@ -86,15 +84,11 @@ function goHome(){ document.getElementById("mainPage").style.display = "block"; 
 function openGoogleForm(){ window.open("https://forms.gle/jPvpNZEK93SHuRU98", "_blank"); }
 function openNewRegistration(){
   let now = new Date();
-  let openDate = new Date("2026-06-20T20:00:00");
-  if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>20.06.2026 AT 08.00 PM</b>"); }
-  else{ window.open("https://forms.gle/Lqo6L2pqWXbcLnPA8", "_blank"); }
+  let openDate = new Date("2026-06-27T20:00:00");
+  if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>27.06.2026 AT 08.00 PM</b>"); }
+  else{ window.open("https://docs.google.com/forms/d/e/1FAIpQLScnxyYegAXZ1bBvj2Ws7Dm2G6sBabg2Syrkk0w6asgbVJT-yw/viewform?usp=sharing&ouid=103129801505293744516", "_blank"); }
 }
-// 3rd Registration function
-function openThirdRegistration(){
-    window.open("https://forms.gle/2HzfFrZH1WzpNSxGA", "_blank");
-}
-// 4th Registration function - Change link when ready
+// 4th Registration function
 function openFourthRegistration(){
     window.open("https://forms.gle/WiugsddUCchGB8599", "_blank");
 }
