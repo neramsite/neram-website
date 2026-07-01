@@ -10,57 +10,29 @@
 body{ background:#06070d; color:#e2eafc; font-family:'Oxanium',sans-serif; overflow-x:hidden; min-height:100vh; }
 body::before{ content:''; position:fixed; top:0; left:0; width:100%; height:100%; background: linear-gradient(rgba(0,242,254,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(0,242,254,0.015) 1px, transparent 1px); background-size:30px 30px; z-index:-2; }
 body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; height:600px; background: radial-gradient(circle, rgba(0,242,254,0.06) 0%, transparent 65%); z-index:-1; }
-
 /* NAVBAR */
 .top-navbar{ width:100%; padding:20px 50px; display:flex; justify-content:space-between; align-items:center; background:#090b14; border-bottom:3px solid #00f2fe; position:fixed; top:0; left:0; z-index:99999; box-shadow: 0 4px 30px rgba(0,242,254,0.25); }
 .logo{ position:relative; padding:14px 35px; font-size:32px; font-weight:900; letter-spacing:5px; text-transform:uppercase; border-radius:18px; overflow:hidden; background: linear-gradient(135deg, rgba(0,242,254,0.12), rgba(255,255,255,0.03)); border:1px solid rgba(0,242,254,0.5); box-shadow: 0 0 15px rgba(0,242,254,0.5), 0 0 50px rgba(0,242,254,0.15); backdrop-filter:blur(12px); animation:floatLogo 3s ease-in-out infinite; white-space: nowrap; }
 .logo span{ background: linear-gradient(90deg, #00f2fe, #ffffff, #5ce1ff, #00f2fe); background-size:300%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:textMove 5s linear infinite; }
-
+@keyframes rotateGlow{ 100%{ transform:rotate(360deg); } }
 @keyframes textMove{ 0%{ background-position:0%; } 100%{ background-position:300%; } }
 @keyframes floatLogo{ 0%{ transform:translateY(0px); } 50%{ transform:translateY(-3px); } 100%{ transform:translateY(0px); } }
-
 /* NAV BUTTONS */
 .nav-buttons{ display:flex; gap:12px; }
 .nav-buttons button{ font-family:'Oxanium',sans-serif; padding:12px 28px; border:1px solid #00f2fe; background:transparent; color:#00f2fe; font-size:15px; font-weight:700; letter-spacing:1px; cursor:pointer; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); transition:0.3s; }
 .nav-buttons button:hover{ background:#00f2fe; color:#06070d; box-shadow: 0 0 20px rgba(0,242,254,0.5); transform:translateY(-2px); }
-
-/* HERO & GRID */
+/* HERO */
 .hero{ padding:150px 20px 0px; text-align:center; }
+/* POSTER GRID */
 .poster-grid{ max-width:1400px; margin:auto; padding:20px 18px 100px; display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:32px; justify-content:center; }
-
 /* POSTER CARD */
 .poster-card{ background:#0e1122; border:2px solid #1a1f38; padding:18px; position:relative; display:flex; flex-direction:column; justify-content:space-between; clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px)); transition:0.4s; width:100%; max-width:340px; margin:auto; }
 .poster-card:hover{ transform: translateY(-4px) scale(1.01); border-color:#00f2fe; box-shadow: -4px 4px 0px #00f2fe, 0 15px 30px rgba(0,242,254,0.25); }
 .image-container{ width:100%; height:450px; overflow:hidden; border:1px solid rgba(255,255,255,0.05); background:#06070d; border-radius:12px; position:relative; }
 .poster-image{ width:100%; height:100%; object-fit:contain; object-position:center; display:block; transition:0.4s; }
+.poster-card:hover .poster-image{ transform:scale(1.03); }
 .poster-btn{ font-family:'Oxanium',sans-serif; width:100%; padding:14px; margin-top:16px; border:none; background: linear-gradient(135deg, #00f2fe 0%, #00a2ae 100%); color:#06070d; font-size:14px; font-weight:800; letter-spacing:2px; cursor:pointer; clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 10px 100%); transition:0.3s; box-shadow: 0 0 15px rgba(0,242,254,0.35); }
 .poster-btn:hover{ background: linear-gradient(135deg, #ffffff 0%, #e2eafc 100%); transform: translateY(-3px) scale(1.02); box-shadow: 0 0 25px rgba(255,255,255,0.5); }
-
-/* CYBER REGISTRATION SYSTEM LOGS */
-.custom-form-section{ display:none; max-width:750px; margin:160px auto 100px; padding:45px 35px; background:#0a0d1a; border:2px solid #00f2fe; box-shadow: 0 0 40px rgba(0,242,254,0.2); clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px)); }
-.custom-form-section h2{ font-size:26px; font-weight:800; color:#fff; text-align:center; margin-bottom:8px; letter-spacing:3px; text-transform:uppercase; }
-.custom-form-section p.sub-title{ text-align:center; font-family:'Fira Code', monospace; font-size:12px; color:#00f2fe; margin-bottom:35px; }
-.form-group{ margin-bottom:24px; }
-.form-group label{ display:block; font-size:13px; font-weight:700; margin-bottom:10px; color:#5ce1ff; letter-spacing:1px; text-transform:uppercase; }
-.form-group input[type="text"], .form-group input[type="email"], .form-group select, .form-group textarea{ font-family:'Fira Code',monospace; width:100%; padding:15px; background:#12162b; border:1px solid #242b54; color:#00f2fe; font-size:14px; outline:none; transition:0.3s; }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:#00f2fe; box-shadow:0 0 12px rgba(0,242,254,0.35); }
-
-/* CUSTOM MULTIPLE CHOICE/RADIO LAYOUT */
-.radio-group-container { display: flex; flex-direction: column; gap: 12px; margin-top: 5px; }
-.radio-option { display: flex; align-items: center; background: #12162b; border: 1px solid #242b54; padding: 14px 20px; cursor: pointer; transition: 0.2s; }
-.radio-option:hover { border-color: #00f2fe; background: rgba(0,242,254,0.02); }
-.radio-option input[type="radio"] { appearance: none; -webkit-appearance: none; width: 16px; height: 16px; border: 2px solid #242b54; border-radius: 50%; margin-right: 15px; outline: none; position: relative; cursor: pointer; }
-.radio-option input[type="radio"]:checked { border-color: #00f2fe; }
-.radio-option input[type="radio"]:checked::before { content: ''; position: absolute; width: 8px; height: 8px; background: #00f2fe; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.radio-option span { font-family: 'Fira Code', monospace; font-size: 14px; color: #e2eafc; }
-
-.payment-intel-box{ background: rgba(255, 74, 74, 0.05); border: 1px dashed #ff4a4a; padding: 20px; border-radius: 6px; margin-bottom: 24px; color: #ff8e8e; font-size: 14px; }
-.payment-intel-box b { color: #ff4a4a; font-size: 16px; }
-
-.file-custom-input{ position:relative; display:block; width:100%; padding:18px; background:#12162b; border:2px dashed #242b54; text-align:center; cursor:pointer; color:#e2eafc; font-size:14px; font-family:'Fira Code',monospace; transition: 0.3s; }
-.file-custom-input:hover { border-color: #00f2fe; background: rgba(0,242,254,0.02); }
-.file-custom-input input[type="file"]{ position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer; }
-
 /* POPUPS & ADMIN */
 .popup-bg, .registration-popup{ position:fixed; top:0; left:0; width:100%; height:100%; display:none; justify-content:center; align-items:center; background: rgba(4,5,10,0.92); z-index:9999; padding:20px; }
 .popup-box, .registration-box{ width:400px; padding:40px 30px; background:#0a0d1a; border:2px solid #00f2fe; text-align:center; box-shadow: 0 0 30px rgba(0,242,254,0.2); }
@@ -68,7 +40,6 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 .popup-box input, .popup-box select{ font-family:'Fira Code',monospace; width:100%; padding:14px; margin-bottom:16px; background:#12162b; border:1px solid #242b54; color:#00f2fe; font-size:14px; outline:none; }
 .popup-box button, .registration-box button{ font-family:'Oxanium',sans-serif; width:100%; padding:14px; border:1px solid #00f2fe; background:transparent; color:#00f2fe; font-size:14px; font-weight:700; cursor:pointer; transition:0.3s; }
 .popup-box button:hover, .registration-box button:hover{ background:#00f2fe; color:#06070d; }
-
 .admin-page{ display:none; padding:180px 20px 100px; }
 .admin-title{ text-align:center; font-size:42px; margin-bottom:50px; color:#00f2fe; letter-spacing:4px; }
 .admin-grid{ max-width:1000px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap:35px; }
@@ -78,7 +49,6 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 </style>
 </head>
 <body>
-
 <nav class="top-navbar">
   <div class="logo"><span>EDUCATION FOR DIGITAL ASSETS</span></div>
   <div class="nav-buttons">
@@ -90,148 +60,12 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 
 <div id="mainPage">
   <section class="hero"></section>
-  <section class="poster-grid" id="posterGrid">
-    <div class="poster-card">
-      <div class="image-container"><img src="https://i.postimg.cc/DZv5RcDr/Chat-GPT-Image-Jul-1-2026-11-34-30-AM.png" class="poster-image"></div>
-      <button class="poster-btn" onclick="openNewRegistration()">REGISTER</button>
-    </div>
-    <div class="poster-card">
-      <div class="image-container"><img src="https://i.postimg.cc/P5VtCfRw/Chat-GPT-Image-Jun-26-2026-05-28-41-PM.png" class="poster-image" id="fifthPosterImg"></div>
-      <button class="poster-btn" onclick="openFourthRegistration()">REGISTER</button>
-    </div>
-  </section>
-
-  <!-- MASTER CENTRALIZED SECURE DATA INPUT -->
-  <section class="custom-form-section" id="secureFormNode">
-    <h2>MASTER REGISTRATION MATRIX</h2>
-    <p class="sub-title">META INFRASTRUCTURE // SECURITY PROTOCOL INPUT FIELDS</p>
-    
-    <form id="cyberpunkRegisterForm">
-      <div class="form-group">
-        <label>NAME *</label>
-        <input type="text" id="secName" required placeholder="Enter Your Official Full Identity">
-      </div>
-      
-      <div class="form-group">
-        <label>USER ID / BUSINESS CENTER *</label>
-        <input type="text" id="secUserId" required placeholder="Enter Business Terminal ID Code">
-      </div>
-      
-      <!-- MANDATORY BASE CLUB OPTION -->
-      <div class="form-group">
-        <label>BASE CLUB *</label>
-        <div class="radio-group-container">
-          <label class="radio-option">
-            <input type="radio" name="baseClubOpt" value="L-1" checked required>
-            <span>L-1</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>E-MAIL *</label>
-        <input type="email" id="secEmail" required placeholder="operator@domain.com">
-      </div>
-
-      <div class="form-group">
-        <label>PHONE NUMBER *</label>
-        <input type="text" id="secPhone" required placeholder="Enter 10-Digit Interface Vector">
-      </div>
-
-      <div class="form-group">
-        <label>PROFESSIONAL PHOTO *</label>
-        <div class="file-custom-input">
-          <span id="photoLabel">UPLOAD SYSTEM DECK CORE PHOTO</span>
-          <input type="file" id="secPhoto" required onchange="updateLabel('secPhoto', 'photoLabel')">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>LEVEL 1 ATTEND DETAILS *</label>
-        <textarea id="secL1Details" rows="3" required placeholder="Specify your complete Level-1 status analytics..."></textarea>
-      </div>
-
-      <!-- CRITICAL PAYMENT VERIFICATION SYSTEM -->
-      <div class="payment-intel-box">
-        <b>PAYMENT REQUIRED -- RS. 2900/-</b><br><br>
-        Kindly transfer the payment to the builder’s (OR) Millenial's account and upload the payment screenshot in Below this form node.
-      </div>
-
-      <div class="form-group">
-        <label>ENTER YOUR TRANSACTION UPI-NUMBER *</label>
-        <input type="text" id="secUpiNumber" required placeholder="Enter 12-Digit Reference/UPI Core Code">
-      </div>
-
-      <div class="form-group">
-        <label>PAYMENT SCREEN SHOT *</label>
-        <div class="file-custom-input">
-          <span id="ssLabel">UPLOAD SUCCESSFUL INJECTION SCREENSHOT</span>
-          <input type="file" id="secSS" required onchange="updateLabel('secSS', 'ssLabel')">
-        </div>
-      </div>
-
-      <!-- UPLINE DECK CHAIN SEGMENTS -->
-      <div class="form-group">
-        <label>UPLINE L-3 *</label>
-        <input type="text" id="secL3" required placeholder="Specify L-3 Commander Vector">
-      </div>
-
-      <!-- L4 DROPDOWN (MANDATORY) -->
-      <div class="form-group">
-        <label>UPLINE L4 *</label>
-        <select id="secL4" required>
-          <option value="">-- SELECT SECURITY DROPDOWN NODE --</option>
-          <option value="RAMACHANDRAN">RAMACHANDRAN</option>
-          <option value="KARTHIKEYAN BBS">KARTHIKEYAN BBS</option>
-          <option value="VIJAYKUMAR">VIJAYKUMAR</option>
-          <option value="RAJA RS">RAJA RS</option>
-          <option value="MENAKA">MENAKA</option>
-          <option value="REVATHI">REVATHI</option>
-          <option value="ANANTHAKUMAR A">ANANTHAKUMAR A</option>
-          <option value="RAJARAJESWARI">RAJARAJESWARI</option>
-          <option value="SANGARI">SANGARI</option>
-          <option value="SANTHOSHPONVELL">SANTHOSHPONVELL</option>
-          <option value="ARUNPRASATH">ARUNPRASATH</option>
-          <option value="VASANTHY">VASANTHY</option>
-        </select>
-      </div>
-
-      <!-- L5 DROPDOWN (MANDATORY) -->
-      <div class="form-group">
-        <label>UPLINE L5 *</label>
-        <select id="secL5" required>
-          <option value="">-- SELECT SEGMENT DROPDOWN NODE --</option>
-          <option value="VAIRAMUTHU">VAIRAMUTHU</option>
-          <option value="PRABHU SHANKAR">PRABHU SHANKAR</option>
-          <option value="SUKUMAR">SUKUMAR</option>
-        </select>
-      </div>
-
-      <!-- L6 MULTIPLE CHOICE / DROPDOWN (MANDATORY) -->
-      <div class="form-group">
-        <label>UPLINE L6 *</label>
-        <select id="secL6" required>
-          <option value="">-- SELECT CONTROL NODE --</option>
-          <option value="SARAVANAN">SARAVANAN</option>
-        </select>
-      </div>
-
-      <!-- TEAM HEAD MULTIPLE CHOICE / DROPDOWN (MANDATORY) -->
-      <div class="form-group">
-        <label>TEAM HEAD *</label>
-        <select id="secTeamHead" required>
-          <option value="">-- SELECT MASTER CLUSTER HEAD --</option>
-          <option value="PRAVIN KUMAR">PRAVIN KUMAR</option>
-        </select>
-      </div>
-      
-      <button type="submit" class="poster-btn" id="submitBtn">TRANSMIT PACKET DATA ARRAY</button>
-      <button type="button" class="poster-btn" style="background:transparent; color:#ff4a4a; border:1px solid #ff4a4a; margin-top:12px; box-shadow:none;" onclick="cancelRegistration()">ABORT TRANSMISSION</button>
-    </form>
+  <section class="poster-grid">
+    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/DZv5RcDr/Chat-GPT-Image-Jul-1-2026-11-34-30-AM.png" class="poster-image"></div><button class="poster-btn" onclick="openNewRegistration()">REGISTER</button></div>
+    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/P5VtCfRw/Chat-GPT-Image-Jun-26-2026-05-28-41-PM.png" class="poster-image" id="fifthPosterImg"></div><button class="poster-btn" onclick="openFourthRegistration()">REGISTER</button></div>
   </section>
 </div>
 
-<!-- MANAGEMENT INTERFACES -->
 <div id="adminPage" class="admin-page">
   <h1 class="admin-title">ADMIN CONTROL PANEL</h1>
   <div class="admin-grid">
@@ -242,144 +76,35 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 
 <div id="adminPopup" class="popup-bg"><div class="popup-box"><h2>CRITICAL ADMIN GATE</h2><input type="password" id="adminPassword" placeholder="ENTER ACCESS DECK PIN"><button onclick="checkAdminPassword()">VERIFY GATEKEY</button></div></div>
 <div id="loginPopup" class="popup-bg"><div class="popup-box"><h2>SECURITY ROUTER SYSTEM</h2><select id="loginLevel"><option value="">SELECT SEGMENT</option><option value="L4">LEVEL L-4</option><option value="L5">LEVEL L-5</option></select><input type="email" id="loginMail" placeholder="ROUTER MAIL LOGON"><input type="password" id="loginPassword" placeholder="CRYPTOGRAPHIC PHRASE"><button onclick="checkLoginData()">AUTHORIZE IDENTITY</button></div></div>
-<div id="registrationPopup" class="registration-popup"><div class="registration-box"><h2>SYSTEM COMPLIANCE LOG</h2><p id="popupMessage">MESSAGE</p><button onclick="closeRegistrationPopup()">CLOSE</button></div></div>
+<div id="registrationPopup" class="registration-popup"><div class="registration-box"><h2>REGISTRATION STATUS</h2><p id="popupMessage">MESSAGE</p><button onclick="closeRegistrationPopup()">CLOSE</button></div></div>
 
 <script>
-// !!! UNNODA APPS SCRIPT WEB APP URL-AI INGA PASTE PANNU MACHA !!!
-const APPS_SCRIPT_URL = "YOUR_NEW_APPS_SCRIPT_URL_HERE";
-
-function goHome(){ 
-  document.getElementById("mainPage").style.display = "block"; 
-  document.getElementById("adminPage").style.display = "none"; 
-  cancelRegistration();
-  window.scrollTo({top:0, behavior:'smooth'}); 
-}
-
+function goHome(){ document.getElementById("mainPage").style.display = "block"; document.getElementById("adminPage").style.display = "none"; window.scrollTo({top:0, behavior:'smooth'}); }
 function openNewRegistration(){
   let now = new Date();
   let openDate = new Date("2026-07-04T20:00:00");
-  if(now < openDate){ 
-    showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>04.07.2026 AT 08.00 PM</b>"); 
-  } else{ 
-    loadSecureForm();
-  }
+  if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>04.07.2026 AT 08.00 PM</b>"); }
+  else{ window.open("https://forms.gle/EDrkgAGDgiEomN3g6", "_blank"); }
 }
-
+// 4th Registration function
 function openFourthRegistration(){
-  loadSecureForm();
+    window.open("https://forms.gle/Pp2BUKVrobNyhwNh9", "_blank");
 }
-
-function loadSecureForm() {
-  document.getElementById("posterGrid").style.display = "none";
-  document.getElementById("secureFormNode").style.display = "block";
-  window.scrollTo({top:100, behavior:'smooth'});
-}
-
-function cancelRegistration() {
-  document.getElementById("secureFormNode").style.display = "none";
-  document.getElementById("posterGrid").style.display = "grid";
-  document.getElementById("cyberpunkRegisterForm").reset();
-  document.getElementById("photoLabel").innerText = "UPLOAD SYSTEM DECK CORE PHOTO";
-  document.getElementById("ssLabel").innerText = "UPLOAD SUCCESSFUL INJECTION SCREENSHOT";
-  document.getElementById("photoLabel").style.color = "#e2eafc";
-  document.getElementById("ssLabel").style.color = "#e2eafc";
-}
-
-function updateLabel(inputId, labelId) {
-  let fileInput = document.getElementById(inputId);
-  if(fileInput.files.length > 0) {
-    document.getElementById(labelId).innerText = "DATA SECURED: " + fileInput.files[0].name;
-    document.getElementById(labelId).style.color = "#00f2fe";
-  }
-}
-
-// ARRAYS INJECTION & DISPATCH LOGIC
-document.getElementById("cyberpunkRegisterForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  
-  let submitBtn = document.getElementById("submitBtn");
-  submitBtn.innerText = "OVERLINKING SECTOR STORAGE... PLEASE WAIT";
-  submitBtn.disabled = true;
-  
-  let baseClubValue = document.querySelector('input[name="baseClubOpt"]:checked').value;
-
-  let payload = {
-    name: document.getElementById("secName").value,
-    userId: document.getElementById("secUserId").value,
-    baseClub: baseClubValue,
-    email: document.getElementById("secEmail").value,
-    phone: document.getElementById("secPhone").value,
-    l1Details: document.getElementById("secL1Details").value,
-    upiNumber: document.getElementById("secUpiNumber").value,
-    l3: document.getElementById("secL3").value,
-    l4: document.getElementById("secL4").value,
-    l5: document.getElementById("secL5").value,
-    l6: document.getElementById("secL6").value,
-    teamHead: document.getElementById("secTeamHead").value
-  };
-
-  let photoFile = document.getElementById("secPhoto").files[0];
-  let ssFile = document.getElementById("secSS").files[0];
-
-  let readPhoto = new FileReader();
-  readPhoto.readAsDataURL(photoFile);
-  readPhoto.onload = function() {
-    payload.photoData = readPhoto.result;
-    payload.photoName = photoFile.name;
-    payload.photoType = photoFile.type;
-
-    let readSS = new FileReader();
-    readSS.readAsDataURL(ssFile);
-    readSS.onload = function() {
-      payload.ssData = readSS.result;
-      payload.ssName = ssFile.name;
-      payload.ssType = ssFile.type;
-
-      // TRANSMIT DATA PACKETS VIA POST
-      fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        body: JSON.stringify(payload)
-      })
-      .then(res => res.json())
-      .then(response => {
-        if(response.status === "SUCCESS") {
-          showRegistrationPopup("ALL PACKETS INJECTED TO DRIVE/SHEET!<br><br><b>REGISTRATION CLEAR.</b>");
-          cancelRegistration();
-        } else {
-          showRegistrationPopup("CORE DISK ERROR: DATA UPLINK VERIFICATION FAILED.");
-        }
-      })
-      .catch(error => {
-        showRegistrationPopup("UPLINK FAULT: DISCONNECTED FROM SCRIPT SUITE.");
-        console.error(error);
-      })
-      .finally(() => {
-        submitBtn.innerText = "TRANSMIT PACKET DATA ARRAY";
-        submitBtn.disabled = false;
-      });
-    };
-  };
-});
-
 function showRegistrationPopup(message){ document.getElementById("registrationPopup").style.display = "flex"; document.getElementById("popupMessage").innerHTML = message; }
 function closeRegistrationPopup(){ document.getElementById("registrationPopup").style.display = "none"; }
 function openAdminPopup(){ document.getElementById("adminPopup").style.display = "flex"; }
 function openLoginPopup(){ document.getElementById("loginPopup").style.display = "flex"; }
-
 window.onclick = function(event){
   let ids = ["adminPopup", "loginPopup", "registrationPopup"];
   ids.forEach(id => { if(event.target == document.getElementById(id)){ document.getElementById(id).style.display = "none"; } });
 }
-
 function checkAdminPassword(){
   let pass = document.getElementById("adminPassword").value;
   if(pass === "kavi123"){ document.getElementById("adminPopup").style.display = "none"; document.getElementById("mainPage").style.display = "none"; document.getElementById("adminPage").style.display = "block"; window.scrollTo({top:0, behavior:'smooth'}); }
   else{ alert("INVALID PASSWORD"); }
 }
-
 function openTeamDetails(){ window.open("https://drive.google.com/", "_blank"); }
 function openActivities(){ window.open("https://docs.google.com/", "_blank"); }
-
 function checkLoginData(){
   let level = document.getElementById("loginLevel").value;
   let password = document.getElementById("loginPassword").value;
