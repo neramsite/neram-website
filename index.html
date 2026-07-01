@@ -61,7 +61,6 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 <div id="mainPage">
   <section class="hero"></section>
   <section class="poster-grid">
-    <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/LX8jbmBf/Chat-GPT-Image-Jun-1-2026-03-19-56-PM.png" class="poster-image"></div><button class="poster-btn" onclick="openGoogleForm()">REGISTER</button></div>
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/Bv90507X/Chat-GPT-Image-Jun-25-2026-10-37-31-AM.png" class="poster-image"></div><button class="poster-btn" onclick="openNewRegistration()">REGISTER</button></div>
     <div class="poster-card"><div class="image-container"><img src="https://i.postimg.cc/P5VtCfRw/Chat-GPT-Image-Jun-26-2026-05-28-41-PM.png" class="poster-image" id="fifthPosterImg"></div><button class="poster-btn" onclick="openFourthRegistration()">REGISTER</button></div>
   </section>
@@ -81,12 +80,11 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 
 <script>
 function goHome(){ document.getElementById("mainPage").style.display = "block"; document.getElementById("adminPage").style.display = "none"; window.scrollTo({top:0, behavior:'smooth'}); }
-function openGoogleForm(){ window.open("https://forms.gle/jPvpNZEK93SHuRU98", "_blank"); }
 function openNewRegistration(){
   let now = new Date();
-  let openDate = new Date("2026-06-27T20:00:00");
-  if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>27.06.2026 AT 08.00 PM</b>"); }
-  else{ window.open("https://docs.google.com/forms/d/e/1FAIpQLScnxyYegAXZ1bBvj2Ws7Dm2G6sBabg2Syrkk0w6asgbVJT-yw/viewform?usp=sharing&ouid=103129801505293744516", "_blank"); }
+  let openDate = new Date("2026-07-04T20:00:00");
+  if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>04.07.2026 AT 08.00 PM</b>"); }
+  else{ window.open("https://forms.gle/EDrkgAGDgiEomN3g6", "_blank"); }
 }
 // 4th Registration function
 function openFourthRegistration(){
