@@ -84,8 +84,8 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 function goHome(){ document.getElementById("mainPage").style.display = "block"; document.getElementById("adminPage").style.display = "none"; window.scrollTo({top:0, behavior:'smooth'}); }
 function openNewRegistration(){
   let now = new Date();
-  // Target date set to July 11, 2026, at 20:00 (8:00 PM)
-  let openDate = new Date("2026-07-11T20:00:00");
+  // Target date set to July 18, 2026, at 20:00 (8:00 PM)
+  let openDate = new Date("2026-07-18T20:00:00");
   if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>18.07.2026 AT 08.00 PM</b>"); }
   else{ window.open("https://forms.gle/steSCQfijs51HtwZA", "_blank"); }
 }
