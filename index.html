@@ -67,7 +67,7 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 <div id="mainPage">
   <section class="hero"></section>
   <section class="poster-grid">
-    <!-- 1st Poster -->
+    <!-- 1st Poster Card -->
     <div class="poster-card">
       <div class="image-container">
         <img src="https://i.postimg.cc/jSxTdG2P/Chat-GPT-Image-Jul-22-2026-06-50-01-AM.png" class="poster-image">
@@ -75,7 +75,7 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
       <button class="poster-btn" onclick="openNewRegistration()">REGISTER</button>
     </div>
 
-    <!-- 3rd Poster Card Added Here -->
+    <!-- 3rd Poster Card -->
     <div class="poster-card">
       <div class="image-container">
         <img src="https://i.postimg.cc/kXMKNghw/signal-2026-07-21-12-46-47-220.jpg" class="poster-image" id="thirdPosterImg">
@@ -83,12 +83,20 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
       <button class="poster-btn" onclick="openThirdRegistration()">REGISTER</button>
     </div>
 
-    <!-- 4th Poster -->
+    <!-- 4th Poster Card -->
     <div class="poster-card">
       <div class="image-container">
-        <img src="https://i.postimg.cc/MGw4T5tR/signal-2026-07-13-13-57-28-383.jpg" class="poster-image" id="fifthPosterImg">
+        <img src="https://i.postimg.cc/MGw4T5tR/signal-2026-07-13-13-57-28-383.jpg" class="poster-image" id="fourthPosterImg">
       </div>
       <button class="poster-btn" onclick="openFourthRegistration()">REGISTER</button>
+    </div>
+
+    <!-- 5th Poster Card Added Here -->
+    <div class="poster-card">
+      <div class="image-container">
+        <img src="https://i.postimg.cc/3R9dJ3zq/Chat-GPT-Image-Jul-26-2026-04-19-02-PM.png" class="poster-image" id="fifthPosterImg">
+      </div>
+      <button class="poster-btn" onclick="openFifthRegistration()">REGISTER</button>
     </div>
   </section>
 </div>
@@ -118,13 +126,17 @@ function openNewRegistration(){
 
 // 3rd Registration function
 function openThirdRegistration(){
-  // Form link ah replace pannikolga
   window.open("https://forms.gle/jevijqcGEJw9RpQVA", "_blank");
 }
 
 // 4th Registration function
 function openFourthRegistration(){
   window.open("https://forms.gle/mYHHdcFURk9zZYTXA", "_blank");
+}
+
+// 5th Registration function
+function openFifthRegistration(){
+  window.open("https://forms.gle/PPE6SRfShe4WQAVq6", "_blank");
 }
 
 function showRegistrationPopup(message){ document.getElementById("registrationPopup").style.display = "flex"; document.getElementById("popupMessage").innerHTML = message; }
