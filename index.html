@@ -75,6 +75,14 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
       <button class="poster-btn" onclick="openNewRegistration()">REGISTER</button>
     </div>
 
+    <!-- 3rd Poster Card -->
+    <div class="poster-card">
+      <div class="image-container">
+        <img src="https://i.postimg.cc/mDs7zp7j/Chat-GPT-Image-Aug-4-2026-02-10-40-PM.png" class="poster-image" id="thirdPosterImg">
+      </div>
+      <button class="poster-btn" onclick="openThirdRegistration()">REGISTER</button>
+    </div>
+
     <!-- 5th Poster Card -->
     <div class="poster-card">
       <div class="image-container">
@@ -106,6 +114,12 @@ function openNewRegistration(){
   let openDate = new Date("2026-07-25T20:00:00");
   if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>25.07.2026 AT 08.00 PM</b>"); }
   else{ window.open("https://forms.gle/8jvdVo3pMBpUfWDY8", "_blank"); }
+}
+
+// 3rd Registration function
+function openThirdRegistration(){
+  // Replace the link below with your actual Google Form / Registration link for poster 3
+  window.open("https://forms.gle/9uSwH8nx2JubQqrG6", "_blank");
 }
 
 // 5th Registration function
