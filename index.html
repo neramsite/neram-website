@@ -70,25 +70,9 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
     <!-- 1st Poster Card -->
     <div class="poster-card">
       <div class="image-container">
-        <img src="https://i.postimg.cc/mkDpcH0p/Chat-GPT-Image-Aug-8-2026-10-03-22-PM.png" class="poster-image">
+        <img src="https://i.postimg.cc/V6MnKLXM/Chat-GPT-Image-Aug-8-2026-10-12-03-PM.png" class="poster-image">
       </div>
       <button class="poster-btn" onclick="openNewRegistration()">REGISTER</button>
-    </div>
-
-    <!-- 3rd Poster Card -->
-    <div class="poster-card">
-      <div class="image-container">
-        <img src="https://i.postimg.cc/mDs7zp7j/Chat-GPT-Image-Aug-4-2026-02-10-40-PM.png" class="poster-image" id="thirdPosterImg">
-      </div>
-      <button class="poster-btn" onclick="openThirdRegistration()">REGISTER</button>
-    </div>
-
-    <!-- 5th Poster Card -->
-    <div class="poster-card">
-      <div class="image-container">
-        <img src="https://i.postimg.cc/XN2HMgT4/Chat-GPT-Image-Jul-28-2026-12-58-44-PM.png" class="poster-image" id="fifthPosterImg">
-      </div>
-      <button class="poster-btn" onclick="openFifthRegistration()">REGISTER</button>
     </div>
   </section>
 </div>
@@ -113,18 +97,7 @@ function openNewRegistration(){
   // Target date set to July 25, 2026, at 20:00 (8:00 PM)
   let openDate = new Date("2026-07-25T20:00:00");
   if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>25.07.2026 AT 08.00 PM</b>"); }
-  else{ window.open("https://forms.gle/pMMzAMpcfxiaD1W17", "_blank"); }
-}
-
-// 3rd Registration function
-function openThirdRegistration(){
-  // Replace the link below with your actual Google Form / Registration link for poster 3
-  window.open("https://forms.gle/9uSwH8nx2JubQqrG6", "_blank");
-}
-
-// 5th Registration function
-function openFifthRegistration(){
-  window.open("https://forms.gle/jjwPsDBGCXaPjZWc6", "_blank");
+  else{ window.open("https://forms.gle/tuaEtYKBELMhcRZv5", "_blank"); }
 }
 
 function showRegistrationPopup(message){ document.getElementById("registrationPopup").style.display = "flex"; document.getElementById("popupMessage").innerHTML = message; }
