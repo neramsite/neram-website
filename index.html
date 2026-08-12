@@ -70,9 +70,18 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
     <!-- 1st Poster Card -->
     <div class="poster-card">
       <div class="image-container">
-        <img src="https://i.postimg.cc/8CN2pjzc/Chat-GPT-Image-Aug-8-2026-10-19-47-PM.png" class="poster-image">
+        <img src="https://i.postimg.cc/8CN2pjzc/Chat-GPT-Image-Aug-8-2026-10-19-47-PM.png" class="poster-image" alt="Poster 1">
       </div>
-      <button class="poster-btn" onclick="openNewRegistration()">REGISTER</button>
+      <button class="poster-btn" onclick="openNewRegistration()">REGISTER </button>
+    </div>
+
+    <!-- 2nd Poster Card -->
+    <div class="poster-card">
+      <div class="image-container">
+        <!-- தேவையான Image URL-ஐ கீழே மாற்றி கொள்ளவும் -->
+        <img src="https://i.postimg.cc/6p9jyb4T/Chat-GPT-Image-Aug-12-2026-10-30-58-AM.png" class="poster-image" alt="Poster 2">
+      </div>
+      <button class="poster-btn" onclick="openNewRegistration2()">REGISTER </button>
     </div>
   </section>
 </div>
@@ -92,12 +101,21 @@ body::after{ content:''; position:fixed; top:20%; right:-10%; width:600px; heigh
 <script>
 function goHome(){ document.getElementById("mainPage").style.display = "block"; document.getElementById("adminPage").style.display = "none"; window.scrollTo({top:0, behavior:'smooth'}); }
 
+// First Registration Logic
 function openNewRegistration(){
   let now = new Date();
-  // Target date set to July 25, 2026, at 20:00 (8:00 PM)
   let openDate = new Date("2026-07-25T20:00:00");
-  if(now < openDate){ showRegistrationPopup("REGISTRATION OPENS ON <br><br><b>25.07.2026 AT 08.00 PM</b>"); }
+  if(now < openDate){ showRegistrationPopup("REGISTRATION 1 OPENS ON <br><br><b>25.07.2026 AT 08.00 PM</b>"); }
   else{ window.open("https://forms.gle/tuaEtYKBELMhcRZv5", "_blank"); }
+}
+
+// Second Registration Logic
+function openNewRegistration2(){
+  let now = new Date();
+  // தேவைக்கேற்ப Target Date மற்றும் Time-ஐ மாற்றி கொள்ளவும்
+  let openDate = new Date("2026-07-25T20:00:00");
+  if(now < openDate){ showRegistrationPopup("REGISTRATION 2 OPENS ON <br><br><b>25.07.2026 AT 08.00 PM</b>"); }
+  else{ window.open("https://forms.gle/soBSLhmA5XvsL7qp9", "_blank"); } // தேவைக்கேற்ப 2nd Form Link மாற்றி கொள்ளவும்
 }
 
 function showRegistrationPopup(message){ document.getElementById("registrationPopup").style.display = "flex"; document.getElementById("popupMessage").innerHTML = message; }
